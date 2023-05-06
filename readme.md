@@ -5,6 +5,8 @@
   <img src="https://user-images.githubusercontent.com/78680563/227708528-0e803ddf-506e-4d8b-98bc-dd7bf0f1b518.png" alt="Om's Logo Image"/>
 </p>
 
+### Note: This website is responsive but due to lack of graphical processing in phone's web browser it cannot process those 3d graphics when run in a phone. This website works fine in all Desktop, Tablets and Laptops. 
+
 This project is made using Vite!
 
 The 3D portfolio website made using React.js, Tailwind, and Three.js is a stunning showcase of creativity and technical expertise. The website's interface is beautifully designed and incorporates 3D graphics that add depth and visual interest to the user experience. Using Three.js, the website is able to render three-dimensional objects with incredible realism and interactivity. Meanwhile, React.js and Tailwind provide a responsive and efficient front-end framework that makes navigation and user interaction seamless. The result is a portfolio website that is both visually impressive and highly functional, demonstrating the power of modern web development technologies.
