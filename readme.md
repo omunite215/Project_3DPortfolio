@@ -108,6 +108,6 @@ If you have any feedback, please reach out to me at omunite21@gmail.com
 
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/78680563/214765405-cc734a03-8b4b-4051-be25-77d4b088ea69.png" alt="Om's Logo Image"/>
+  <img src="https://github.com/omunite215/hoobank/assets/78680563/eed23408-14a8-4d04-82b6-6d982f1dcca7" alt="Om's Logo Image"/>
 </p>
 
