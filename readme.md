@@ -69,28 +69,10 @@ Specializations:
 
 ## 🙋‍♂️ Connect With Me
 
-<p align="left">
-  <a href="https://skillicons.dev">
-    <a href="https://github.com/omunite215">
-      <img src="https://skillicons.dev/icons?i=github" />
-    </a>
-  </a>
-   <a href="https://skillicons.dev">
-    <a href="https://www.linkedin.com/in/om-patel-401068143/">
-      <img src="https://skillicons.dev/icons?i=linkedin" />
-    </a>
-  </a>
-  <a href="https://skillicons.dev">
-    <a href="https://www.instagram.com/_21omp/">
-      <img src="https://skillicons.dev/icons?i=instagram" />
-    </a>
-  </a>
-   <a href="https://skillicons.dev">
-    <a href="https://portfoliobyom.netlify.app/">
-      <img src="https://skillicons.dev/icons?i=devto" />
-    </a>
-  </a>
-</p>
+[<img src="https://skillicons.dev/icons?i=github" />](https://github.com/omunite215)&nbsp;
+[<img src="https://skillicons.dev/icons?i=linkedin" />](https://www.linkedin.com/in/om-patel-401068143/)&nbsp;
+[<img src="https://skillicons.dev/icons?i=instagram" />](https://www.instagram.com/_21omp/)&nbsp;
+[<img src="https://skillicons.dev/icons?i=devto" />](https://portfoliobyom.netlify.app/)
 
 ## 🗒️ Authors
 - Om Patel
