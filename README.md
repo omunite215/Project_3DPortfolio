@@ -56,11 +56,11 @@ The website should now be up and running on http://localhost:3000.
 
 ## 🏠 Built With:
 
-[![My Skills](https://skillicons.dev/icons?i=vscode,vite,react,nextjs,threejs,tailwind,netlify)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=vscode,react,nextjs,threejs,tailwind,netlify)](https://skillicons.dev)
 
 ## 🛠 Skills
 
-[![My Skills](https://skillicons.dev/icons?i=html,css,js,react,nextjs,tailwind,threejs)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=html,css,js,ts,react,nextjs,tailwind,threejs)](https://skillicons.dev)
 
 ## 🚀 About Me
 Specializations:
