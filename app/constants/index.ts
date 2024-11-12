@@ -15,19 +15,19 @@ export const navLinks = [
 
 const services = [
 	{
+		title: "UI/UX Designer",
+		icon: "/backend.webp",
+	},
+	{
 		title: "Full Stack Web Developer",
 		icon: "/web.webp",
 	},
 	{
-		title: "UI Designer",
+		title: "App Developer",
 		icon: "/mobile.webp",
 	},
 	{
-		title: "UX Designer",
-		icon: "/backend.webp",
-	},
-	{
-		title: "Content Creator",
+		title: "Software Engineer",
 		icon: "/creator.webp",
 	},
 ];
@@ -89,24 +89,36 @@ const technologies = [
 
 const experiences = [
 	{
-		title: "Web Designer",
+		title: "Wordpress Developer & UI/UX Designer",
 		company_name: "A.V.M Auto",
 		icon: "/company/avm.webp",
 		iconBg: "#383E56",
-		date: "2020 -  2021",
+		date: "2020 -  2023",
 		points: [
-			"Analyzing the needs of customer in a website.",
-			"Designing User Interface (UI) for the problem statement.",
-			"Improving designs to make more user friendly.",
-			"User Experience improvements and feedbacks.",
+			"Self-Taught Expertise: Gained proficiency in WordPress and UI/UX design through independent learning.",
+			"Collaborative Design: Worked closely with stakeholders to gather feedback and iterate on the portfolio website's interactivity.",
+			"Successful Website Development: Designed and developed a visually appealing and user-friendly portfolio website using WordPress.",
+			"Positive Business Impact: Contributed to +54.25% sales and overall business growth through the improved website."
 		],
 	},
 	{
-		title: "Wordpress Developer",
-		company_name: "A.V.M Auto",
+		title: "Next.JS Developer",
+		company_name: "Sparkbright Engineering",
 		icon: "/company/avm.webp",
 		iconBg: "#E6DEDD",
-		date: "2021 - 2022",
+		date: "2023 - 2024",
+		points: [
+			"Self-Taught Expertise: Gained proficiency in React.JS and Next.JS through independent learning.",
+			"Successful Website Development: Designed and developed a visually appealing and user-friendly portfolio website using Next.JS.",
+			"Collaborative Design: Worked closely with stakeholders to gather feedback and iterate on the portfolio website's interactivity."
+		],
+	},
+	{
+		title: "Software Developer",
+		company_name: "Way to Web Pvt. Ltd.",
+		icon: "/company/avm.webp",
+		iconBg: "#E6DEDD",
+		date: "2024 - Present",
 		points: [
 			"Developing and maintaining Wordpress Site for A.V.M Auto The Car Body Shop based in Ahmedabad, Gujarat India.",
 			"Analyzing feedbacks and fixing bugs.",
@@ -159,29 +171,36 @@ const testimonials = [
 	},
 ];
 
-const projects = [
+
+const projects :{
+	name: string;
+	description: string;
+	tags: {
+		name: string;
+		color: string;
+	}[];
+	image: string;
+	source_code_link?: string;
+	deploy_link: string;
+	platform: "Netlify" | "Vercel" | "Figma" | "Wordpress"
+}[] = [
 	{
-		name: "Random Quote Generator",
+		name: "A.V.M Auto Portfolio",
 		description:
-			"A Fully Responsive Random Quote generating website project given by Free Code Camp while completing Front-End Libraries Certifications built using React.JS , Bootstrap CSS and HTML.",
+			"A Designed and developed a visually appealing and user-friendly portfolio website using WordPress.",
 		tags: [
 			{
-				name: "react",
+				name: "wordpress",
 				color: "blue-text-gradient",
 			},
 			{
-				name: "bootstrap",
-				color: "pink-text-gradient",
-			},
-			{
-				name: "quoteapi",
-				color: "orange-text-gradient",
+				name: "google-translate",
+				color: "green-text-gradient",
 			},
 		],
-		image: "/projectimg/quote.webp",
-		source_code_link:
-			"https://github.com/omunite215/FCC-Random-Quote-Generator",
-		netlify_link: "https://randomquotegeneratorbyom.netlify.app/",
+		image: "/projectimg/avm.webp",
+		platform: "Wordpress",
+		deploy_link: "https://avmauto.in/",
 	},
 	{
 		name: "Admin Dashboard UI",
@@ -203,7 +222,8 @@ const projects = [
 		],
 		image: "/projectimg/dashboard.webp",
 		source_code_link: "https://github.com/omunite215/React-Admin-DashBoard",
-		netlify_link: "https://reactadmindashboardbyom.netlify.app/",
+		platform: "Netlify",
+		deploy_link: "https://reactadmindashboardbyom.netlify.app/",
 	},
 	{
 		name: "HooBank",
@@ -221,7 +241,8 @@ const projects = [
 		],
 		image: "/projectimg/hoobank.webp",
 		source_code_link: "https://github.com/omunite215/hoobank",
-		netlify_link: "https://hoobankbyom.netlify.app/",
+		platform: "Netlify",
+		deploy_link: "https://hoobankbyom.netlify.app/",
 	},
 	{
 		name: "Provid A Youtube Clone",
@@ -243,7 +264,8 @@ const projects = [
 		],
 		image: "/projectimg/provid.webp",
 		source_code_link: "https://github.com/omunite215/Provid-A-YouTube-Clone",
-		netlify_link: "https://providbyom.netlify.app/",
+		platform: "Netlify",
+		deploy_link: "https://providbyom.netlify.app/",
 	},
 	{
 		name: "A 3D Developer Portfolio",
@@ -269,7 +291,8 @@ const projects = [
 		],
 		image: "/projectimg/portfoliosample.webp",
 		source_code_link: "https://github.com/omunite215/portfolio",
-		netlify_link: "https://portfoliobyompatel.netlify.app/",
+		platform: "Netlify",
+		deploy_link: "https://portfoliobyompatel.netlify.app/",
 	},
 ];
 

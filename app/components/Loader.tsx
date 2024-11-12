@@ -16,7 +16,7 @@ const CanvasLoader = () => {
 				flexDirection: "column",
 			}}
 		>
-			<span className="canvas-load" />
+			<span className="canvas-loader" />
 			<p
 				style={{
 					fontSize: 20,

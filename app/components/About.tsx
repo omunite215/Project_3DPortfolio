@@ -54,17 +54,13 @@ const About = () => {
 				variants={fadeIn("", "", 0.1, 1)}
 				className="mt-4 text-secondary text-[17px] max-w-[3xl] leading-[30px]"
 			>
-				As a talented Front-End Web Developer and UI/UX Designer, I have honed
-				my skills in working with a variety of JavaScript libraries, including
-				React.js, Next.js and Three.js. Through my experience, I have developed
-				a deep understanding of how these libraries can be leveraged to create
-				dynamic and engaging user interfaces. In addition, I am a quick learner
-				and have worked on numerous projects using popular CSS frameworks such
-				as Tailwind and Bootstrap. I am confident in my ability to create sleek
-				and responsive designs that meet the specific needs of any project. With
-				a keen eye for detail and a passion for delivering high-quality work, I
-				am dedicated to creating beautiful and user-friendly experiences that
-				delight users.
+				Dynamic Full-Stack Developer with a passion for crafting innovative web
+				applications. Proven expertise in React, Next.js, Node.js, and Python.
+				Skilled in UI/UX design and DevOps (Docker). Proven ability to deliver high-quality,
+				scalable solutions, as demonstrated by a strong portfolio of full-stack
+				Next.js projects and modern UI/UX designs. Eager to leverage my
+				technical prowess and problem-solving abilities to contribute to
+				cutting-edge projects and drive innovation.
 			</motion.p>
 			<div className="mt-20 flex flex-wrap gap-10">
 				{services.map((service, index) => (
