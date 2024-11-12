@@ -104,7 +104,7 @@ const experiences = [
 	{
 		title: "Next.JS Developer",
 		company_name: "Sparkbright Engineering",
-		icon: "/company/avm.webp",
+		icon: "/company/sparkbright.webp",
 		iconBg: "#E6DEDD",
 		date: "2023 - 2024",
 		points: [
@@ -116,7 +116,7 @@ const experiences = [
 	{
 		title: "Software Developer",
 		company_name: "Way to Web Pvt. Ltd.",
-		icon: "/company/avm.webp",
+		icon: "/company/wtw.jpg",
 		iconBg: "#E6DEDD",
 		date: "2024 - Present",
 		points: [
@@ -182,7 +182,7 @@ const projects :{
 	image: string;
 	source_code_link?: string;
 	deploy_link: string;
-	platform: "Netlify" | "Vercel" | "Figma" | "Wordpress"
+	platform: "Netlify" | "Vercel" | "Figma" | "Wordpress" | "Web"
 }[] = [
 	{
 		name: "A.V.M Auto Portfolio",
@@ -203,27 +203,27 @@ const projects :{
 		deploy_link: "https://avmauto.in/",
 	},
 	{
-		name: "Admin Dashboard UI",
+		name: "Sparkbright Engineering Portfolio",
 		description:
-			"React Admin Dashboard is a stunning web application that has a beautiful User Interface and has been built using advanced JavaScript concepts, React, and Tailwind CSS which has different graphs, stats and themes.",
+			" Designed and developed a visually appealing and user-friendly portfolio website using Next.JS.",
 		tags: [
 			{
-				name: "react",
-				color: "blue-text-gradient",
+				name: "next",
+				color: "red-text-gradient",
 			},
 			{
-				name: "Syncfusion UI",
+				name: "Next UI",
 				color: "orange-text-gradient",
 			},
 			{
 				name: "tailwind",
-				color: "green-text-gradient",
+				color: "blue-text-gradient",
 			},
 		],
-		image: "/projectimg/dashboard.webp",
+		image: "/projectimg/sparkbright.png",
 		source_code_link: "https://github.com/omunite215/React-Admin-DashBoard",
-		platform: "Netlify",
-		deploy_link: "https://reactadmindashboardbyom.netlify.app/",
+		platform: "Web",
+		deploy_link: "https://sparkbright.in/",
 	},
 	{
 		name: "HooBank",
@@ -231,23 +231,23 @@ const projects :{
 			"A responsive Bank HomePage showcasing different features such as various payment gateways integration, easy money transfer, advanced security, etc. It has a beautiful interface made using Tailwind CSS and React",
 		tags: [
 			{
-				name: "react",
-				color: "blue-text-gradient",
+				name: "next",
+				color: "green-text-gradient",
 			},
 			{
 				name: "tailwind",
-				color: "green-text-gradient",
+				color: "blue-text-gradient",
 			},
 		],
 		image: "/projectimg/hoobank.webp",
 		source_code_link: "https://github.com/omunite215/hoobank",
-		platform: "Netlify",
+		platform: "Vercel",
 		deploy_link: "https://hoobankbyom.netlify.app/",
 	},
 	{
-		name: "Provid A Youtube Clone",
+		name: "MERN Dashboard",
 		description:
-			"Provid is a YouTube clone project built with React, Material UI, and Tailwind CSS. The platform has been designed with a stunning dark mode that enhances the viewing experience. The user interface is intuitive and easy to navigate, ensuring that users can easily find the content they're looking for.",
+			" Designed and developed a visually appealing and user-friendly Data Analytics Dashboard using MERN",
 		tags: [
 			{
 				name: "react",
@@ -258,19 +258,23 @@ const projects :{
 				color: "orange-text-gradient",
 			},
 			{
-				name: "rapidapi",
-				color: "blue-text-gradient",
+				name: "MongoDB",
+				color: "green-text-gradient",
+			},
+			{
+				name: "Express",
+				color: "pink-text-gradient",
 			},
 		],
-		image: "/projectimg/provid.webp",
-		source_code_link: "https://github.com/omunite215/Provid-A-YouTube-Clone",
-		platform: "Netlify",
-		deploy_link: "https://providbyom.netlify.app/",
+		image: "/projectimg/mern.png",
+		source_code_link: "https://github.com/omunite215/Project_MERN-Dashboard",
+		platform: "Web",
+		deploy_link: "https://admin-frontend-r705.onrender.com/",
 	},
 	{
-		name: "A 3D Developer Portfolio",
+		name: "Metaverse Web 3.0",
 		description:
-			"A responsive 3D Portfolio website which is made using Three.js a cross-browser JavaScript library and application programming interface used to create and display animated 3D computer graphics in a web browser using WebGL. It has a beautiful interface made using Tailwind CSS and React.",
+			"A Modern UI/UX Landing Page using Framer Motion and TailwindCSS with a feel and looks of Web 3.0",
 		tags: [
 			{
 				name: "react",
@@ -281,18 +285,41 @@ const projects :{
 				color: "green-text-gradient",
 			},
 			{
-				name: "threejs",
+				name: "framer-motion",
+				color: "orange-text-gradient",
+			},
+		],
+		image: "/projectimg/metaverse.png",
+		source_code_link: "https://github.com/omunite215/Project_Metaverse",
+		platform: "Vercel",
+		deploy_link: "https://project-metaverse-beta.vercel.app/",
+	},
+	{
+		name: "Issue Tracker",
+		description:
+			"A Next.JS Full Stack Issue Tracker made using Next.Js, ShadCN UI, Prisma, mySQL with latest features like Next.JS Server Components, and Serverless features.",
+		tags: [
+			{
+				name: "next",
+				color: "blue-text-gradient",
+			},
+			{
+				name: "tailwind",
+				color: "green-text-gradient",
+			},
+			{
+				name: "shadCN",
 				color: "orange-text-gradient",
 			},
 			{
-				name: "emailjs",
-				color: "pink-text-gradient",
+				name: "mySQL",
+				color: "green-text-gradient",
 			},
 		],
-		image: "/projectimg/portfoliosample.webp",
-		source_code_link: "https://github.com/omunite215/portfolio",
-		platform: "Netlify",
-		deploy_link: "https://portfoliobyompatel.netlify.app/",
+		image: "/projectimg/issuetracker.png",
+		source_code_link: "https://github.com/omunite215/Project_Issue-Tracker",
+		platform: "Vercel",
+		deploy_link: "https://project-issue-tracker.vercel.app/",
 	},
 ];
 

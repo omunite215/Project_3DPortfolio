@@ -19,7 +19,7 @@ type ProjectCardProps = {
 	image: string;
 	source_code_link?: string;
 	deploy_link: string;
-	platform: "Netlify" | "Vercel" | "Figma" | "Wordpress"
+	platform: "Netlify" | "Vercel" | "Figma" | "Wordpress" | "Web"
 };
 
 const ProjectCard = ({
@@ -71,7 +71,7 @@ const ProjectCard = ({
 							className="black-gradient w-10 h-10 ml-2 rounded-full flex justify-center items-center cursor-pointer"
 						>
 							<Image
-								src={platform === "Netlify" ? "/tech/netlify.webp" : platform === "Vercel" ? "/tech/vercel.svg" : platform === "Wordpress" ? "/tech/wordpress.webp" : "/tech/figma.webp"}
+								src={platform === "Netlify" ? "/tech/netlify.webp" : platform === "Vercel" ? "/tech/vercel.svg" : platform === "Wordpress" ? "/tech/wordpress.webp" : platform === "Web" ? "/web.webp" : "/tech/figma.webp"}
 								width={24}
 								height={24}
 								alt="source code"
