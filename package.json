@@ -1,38 +1,40 @@
 {
-  "name": "threejs",
-  "version": "0.1.0",
+  "name": "project-3d-portfolio",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run lint && npm run typecheck",
+    "optimize:assets": "node scripts/optimize-assets.mjs"
   },
   "dependencies": {
-    "@emailjs/browser": "^4.3.3",
-    "@jdion/tilt-react": "^1.0.0",
-    "@react-three/drei": "^9.105.6",
-    "@react-three/fiber": "^8.16.6",
-    "emailjs": "^4.0.3",
-    "framer-motion": "^11.1.9",
-    "maath": "^0.10.7",
-    "next": "14.2.3",
-    "react": "^18",
-    "react-dom": "^18",
-    "react-tilt": "^1.0.2",
-    "react-vertical-timeline-component": "^3.6.0",
-    "three": "^0.164.1"
+    "@emailjs/browser": "^4.4.1",
+    "@react-three/drei": "^10.7.8",
+    "@react-three/fiber": "^9.7.0",
+    "maath": "^0.10.8",
+    "motion": "^13.1.1",
+    "next": "^16.3.3",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-vertical-timeline-component": "^4.0.0",
+    "three": "^0.185.1"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^26.3.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
     "@types/react-vertical-timeline-component": "^3.3.6",
-    "@types/react-dom": "^18",
-    "@types/three": "^0.164.0",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.3",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "@types/three": "^0.185.4",
+    "oxlint": "^1.80.0",
+    "postcss": "^8.5.6",
+    "sharp": "^0.34.4",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.3"
   }
 }

@@ -1,26 +1,23 @@
-import { EarthCanvas, BallCanvas, ComputersCanvas, StarsCanvas } from './canvas';
-import Hero from './Hero';
-import ResumeButton from './ResumeButton';
-import Navbar from './Navbar';
-import About from './About';
-import Tech from './Tech';
-import Experience from './Experience';
-import Works from './Works';
-import Feedbacks from './Feedbacks';
-import Contact from './Contact';
+export { default as About } from "./About";
+export { default as BackToTop } from "./BackToTop";
+export { default as Contact } from "./Contact";
+export { default as Experience } from "./Experience";
+export { default as Feedbacks } from "./Feedbacks";
+export { default as Hero } from "./Hero";
+export { default as Navbar } from "./Navbar";
+export { default as ResumeButton } from "./ResumeButton";
+export { default as ScrollProgress } from "./ScrollProgress";
+export { default as Tech } from "./Tech";
+export { Tilt } from "./Tilt";
+export { default as Works } from "./Works";
+
+export { Container } from "./layout/Container";
+export { Reveal } from "./layout/Reveal";
+export { Section } from "./layout/Section";
 
 export {
-  Hero,
-  ResumeButton,
-  Navbar,
-  About,
-  Tech,
-  Experience,
-  Works,
-  Feedbacks,
-  Contact,
-  EarthCanvas, 
-  BallCanvas, 
-  ComputersCanvas, 
-  StarsCanvas
-}
+	BallCanvas,
+	ComputersCanvas,
+	EarthCanvas,
+	StarsCanvas,
+} from "./canvas";

@@ -1,4 +1,18 @@
-export const navLinks = [
+import type {
+	Experience,
+	NavLink,
+	Project,
+	Service,
+	SocialProfile,
+	Technology,
+} from "@/app/domain/types";
+
+/**
+ * Content for the whole site. Types live in `app/domain/types` so the data and
+ * the components that render it are checked against one definition.
+ */
+
+export const navLinks: NavLink[] = [
 	{
 		id: "about",
 		title: "About",
@@ -13,7 +27,7 @@ export const navLinks = [
 	},
 ];
 
-const services = [
+const services: Service[] = [
 	{
 		title: "UI/UX Designer",
 		icon: "/backend.webp",
@@ -32,7 +46,7 @@ const services = [
 	},
 ];
 
-const technologies = [
+const technologies: Technology[] = [
 	{
 		name: "HTML 5",
 		icon: "/tech/html.webp",
@@ -87,7 +101,7 @@ const technologies = [
 	},
 ];
 
-const experiences = [
+const experiences: Experience[] = [
 	{
 		title: "Wordpress Developer & UI/UX Designer",
 		company_name: "A.V.M Auto",
@@ -128,7 +142,7 @@ const experiences = [
 	},
 ];
 
-const testimonials = [
+const testimonials: SocialProfile[] = [
 	{
 		id: 1,
 		testimonial:
@@ -172,18 +186,7 @@ const testimonials = [
 ];
 
 
-const projects :{
-	name: string;
-	description: string;
-	tags: {
-		name: string;
-		color: string;
-	}[];
-	image: string;
-	source_code_link?: string;
-	deploy_link: string;
-	platform: "Netlify" | "Vercel" | "Figma" | "Wordpress" | "Web"
-}[] = [
+const projects: Project[] = [
 	{
 		name: "A.V.M Auto Portfolio",
 		description:

@@ -1,11 +1,17 @@
 "use client";
-import CanvasLoader from "@/app/components/Loader";
+
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { Suspense, useEffect, useState } from "react";
+import { Suspense } from "react";
+import CanvasLoader from "@/app/components/Loader";
+import { SceneShell, type SceneProps } from "@/app/components/canvas/SceneShell";
+import { useDevice } from "@/app/providers/DeviceProvider";
+
+const MODEL = "/desktop_pc/scene.gltf";
 
 const Computers = ({ isMobile }: { isMobile: boolean }) => {
-	const computer = useGLTF("/desktop_pc/scene.gltf");
+	const computer = useGLTF(MODEL);
+
 	return (
 		<mesh>
 			<hemisphereLight intensity={0.15} groundColor="black" />
@@ -28,28 +34,19 @@ const Computers = ({ isMobile }: { isMobile: boolean }) => {
 	);
 };
 
-const ComputersCanvas = () => {
-	const [isMobile, setIsMobile] = useState(false);
-
-	useEffect(() => {
-		const mediaQuery = window.matchMedia("(max-width: 500px)");
-		setIsMobile(mediaQuery.matches);
-		const handleMediaQueryChange = (event: MediaQueryListEvent) => {
-			setIsMobile(event.matches);
-		};
-		mediaQuery.addEventListener("change", handleMediaQueryChange);
-
-		return () => {
-			mediaQuery.removeEventListener("change", handleMediaQueryChange);
-		};
-	}, []);
+const ComputersScene = ({ eventSource }: SceneProps) => {
+	const { isMobile, dpr } = useDevice();
 
 	return (
 		<Canvas
 			frameloop="demand"
 			shadows
+			dpr={dpr}
+			eventSource={eventSource}
 			camera={{ position: [20, 3, 5], fov: 25 }}
-			gl={{ preserveDrawingBuffer: true }}
+			// No `preserveDrawingBuffer`: it keeps a second copy of every frame and
+			// is only needed to read pixels back, which this scene never does.
+			gl={{ powerPreference: "high-performance", antialias: true }}
 		>
 			<Suspense fallback={<CanvasLoader />}>
 				<OrbitControls
@@ -58,10 +55,27 @@ const ComputersCanvas = () => {
 					minPolarAngle={Math.PI / 2}
 				/>
 				<Computers isMobile={isMobile} />
+				<Preload all />
 			</Suspense>
-			<Preload all />
 		</Canvas>
 	);
 };
+
+/**
+ * The heaviest thing on the page, so it only auto-loads on the full tier.
+ * Everyone else gets a still at the same camera framing, plus an opt-in.
+ */
+const ComputersCanvas = () => (
+	<SceneShell
+		cost="heavy"
+		label="workstation model"
+		poster="/posters/hero.webp"
+		posterAlt="3D render of a desktop workstation running a code editor"
+		priority
+		sizes="(max-width: 768px) 100vw, 70vw"
+	>
+		{(eventSource) => <ComputersScene eventSource={eventSource} />}
+	</SceneShell>
+);
 
 export default ComputersCanvas;

@@ -1,119 +1,49 @@
 "use client";
+
+import { useCallback, useMemo } from "react";
 import { navLinks } from "@/app/constants";
-import Image from "next/image";
-import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useScrollSpy } from "@/app/hooks/useScrollSpy";
+import { useScrolled } from "@/app/hooks/useScrolled";
+import { Container } from "./layout/Container";
+import { Brand } from "./navigation/Brand";
+import { MobileMenu } from "./navigation/MobileMenu";
+import { NavItems } from "./navigation/NavItems";
 import ResumeButton from "./ResumeButton";
 
+/** Site navigation. Behaviour lives in the hooks; markup in navigation/. */
 const Navbar = () => {
-	const [active, setActive] = useState("");
-	const [toggle, setToggle] = useState(false);
-	const [scrolled, setScrolled] = useState(false);
+	const scrolled = useScrolled(100);
+	const ids = useMemo(() => navLinks.map((link) => link.id), []);
 
-	useEffect(() => {
-		const handleScroll = () => {
-			const scrollTop = window.scrollY;
-			if (scrollTop > 100) {
-				setScrolled(true);
-			} else {
-				setScrolled(false);
-			}
-		};
+	// Sole source of truth for the highlight. Clicking a link scrolls to the
+	// section, so the observer picks it up a frame later.
+	const activeId = useScrollSpy(ids);
 
-		window.addEventListener("scroll", handleScroll);
-
-		return () => window.removeEventListener("scroll", handleScroll);
-	}, []);
+	const onNavigateHome = useCallback(() => window.scrollTo({ top: 0 }), []);
 
 	return (
 		<nav
-			className={`paddingX
-			w-full flex items-center py-5 fixed top-0 z-20 ${
+			className={`w-full flex items-center py-5 fixed top-0 z-20 ${
 				scrolled ? "bg-primary" : "bg-transparent"
 			}`}
+			aria-label="Main navigation"
 		>
-			<div className="w-full flex justify-between items-center max-w-7xl mx-auto">
-				{/* biome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
-				<div
-					className="flex items-center gap-2"
-					onClick={() => {
-						setActive("");
-						window.scrollTo(0, 0);
-					}}
-				>
-					<Link href="https://github.com/omunite215">
-						<Image
-							src="/logo.png"
-							width={80}
-							height={80}
-							alt="logo"
-							priority
-							className="object-contain"
-						/>
-					</Link>
-					<p className="text-white text-[18px] font-bold cursor-pointer flex">
-						Om &nbsp; <span className="sm:block hidden ">| omunite215</span>
-					</p>
-				</div>
+			<Container className="flex justify-between items-center">
+				<Brand onNavigateHome={onNavigateHome} />
 
-				<ul className="list-none hidden sm:flex flex-row gap-10">
-					{navLinks.map((nav) => (
-						// biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
-						<li
-							key={nav.id}
-							className={`${
-								active === nav.title ? "text-white" : "text-secondary"
-							} hover:text-white text-[18px] font-medium cursor-pointer`}
-							onClick={() => setActive(nav.title)}
-						>
-							<Link href={`#${nav.id}`}>{nav.title}</Link>
-						</li>
-					))}
-				</ul>
+				<NavItems
+					links={navLinks}
+					activeId={activeId}
+					className="list-none hidden sm:flex flex-row gap-10"
+					itemClassName="hover:text-white text-[18px] font-medium cursor-pointer"
+				/>
+
 				<div className="mt-2 lg:block hidden">
 					<ResumeButton />
 				</div>
 
-				<div className="sm:hidden flex flex-1 justify-end items-center">
-					<Image
-						src={toggle ? "/close.svg" : "/menu.svg"}
-						width={28}
-						height={28}
-						alt="menu"
-						className="w-[28px] h-[28px] object-contain"
-						onClick={() => setToggle(!toggle)}
-					/>
-
-					<div
-						className={`${
-							!toggle ? "hidden" : "flex"
-						} p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
-					>
-						<ul className="list-none flex justify-end items-start flex-1 flex-col gap-4">
-							{navLinks.map((nav) => (
-								// biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
-								<li
-									key={nav.id}
-									className={`font-poppins font-medium cursor-pointer text-[16px] ${
-										active === nav.title ? "text-white" : "text-secondary"
-									}`}
-									onClick={() => {
-										setToggle(!toggle);
-										setActive(nav.title);
-									}}
-								>
-									<Link href={`#${nav.id}`}>{nav.title}</Link>
-								</li>
-							))}
-							<li>
-								<div className="mt-2">
-									<ResumeButton />
-								</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
+				<MobileMenu links={navLinks} activeId={activeId} />
+			</Container>
 		</nav>
 	);
 };

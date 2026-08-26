@@ -1,24 +1,33 @@
 "use client";
-import CanvasLoader from "@/app/components/Loader";
+
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
+import CanvasLoader from "@/app/components/Loader";
+import { SceneShell, type SceneProps } from "@/app/components/canvas/SceneShell";
+import { useDevice } from "@/app/providers/DeviceProvider";
+
+const MODEL = "/planet/scene.gltf";
 
 const Earth = () => {
-	const earth = useGLTF("/planet/scene.gltf");
+	const earth = useGLTF(MODEL);
 
 	return (
 		<primitive object={earth.scene} scale={2.5} position-y={0} rotation-y={0} />
 	);
 };
 
-const EarthCanvas = () => {
+const EarthScene = ({ eventSource }: SceneProps) => {
+	const { dpr, reducedMotion } = useDevice();
+
 	return (
 		<Canvas
 			shadows
-			frameloop="demand"
-			dpr={[1, 2]}
-			gl={{ preserveDrawingBuffer: true }}
+			eventSource={eventSource}
+			// `autoRotate` needs a continuous loop; "demand" would never rotate.
+			frameloop={reducedMotion ? "demand" : "always"}
+			dpr={dpr}
+			gl={{ powerPreference: "high-performance", antialias: true }}
 			camera={{
 				fov: 45,
 				near: 0.1,
@@ -28,7 +37,7 @@ const EarthCanvas = () => {
 		>
 			<Suspense fallback={<CanvasLoader />}>
 				<OrbitControls
-					autoRotate
+					autoRotate={!reducedMotion}
 					enableZoom={false}
 					maxPolarAngle={Math.PI / 2}
 					minPolarAngle={Math.PI / 2}
@@ -39,5 +48,18 @@ const EarthCanvas = () => {
 		</Canvas>
 	);
 };
+
+/** ~2.9 MB of glTF plus 1 MP textures. */
+const EarthCanvas = () => (
+	<SceneShell
+		cost="heavy"
+		label="globe model"
+		poster="/posters/earth.webp"
+		posterAlt="3D render of a stylised globe"
+		sizes="(max-width: 1280px) 100vw, 45vw"
+	>
+		{(eventSource) => <EarthScene eventSource={eventSource} />}
+	</SceneShell>
+);
 
 export default EarthCanvas;
